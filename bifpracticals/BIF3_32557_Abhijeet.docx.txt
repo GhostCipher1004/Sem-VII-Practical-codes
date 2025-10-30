@@ -1,0 +1,282 @@
+﻿DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND DATA SCIENCE
+Computer Laboratory II – BioInformatics
+
+
+ASSIGNMENT - 3
+
+
+Name : Abhijeet Jaywant Tayade
+Roll No : 32557
+Class : BE (AI & DS)
+Batch : B3
+
+
+* Steps to Perform :
+
+
+1. Software Installation:
+1. Autodock - https://autodock.scripts.edu/download-autodock4/ 
+2. BIOVIA discovery studio - https://discover.3ds.com/discovery-studio-visualizer-download
+3. Copy autogrid4 and autodock4
+
+
+2. Protein Cleaning:
+1. Create a working folder.
+2. Download protein structure from PDB bank in PDB format ( Protein Name — 6i81)
+https://www.rcsb.org/
+3. Open 6i81 protein file in BIOVIA DS
+4. Delete water molecules and unwanted ligands.
+5. Cut the ligand and save it separately as control PDB file format
+6. Save the cleaned protein structure in PDB file format (6i81)
+
+
+3. Protein Preparation:
+1. Open Autodock software
+2. Set the preference of start directory to main working directory
+3. Open the cleaned protein structure (6i81 _c1eaned)
+4. Add hydrogens 🡪 Non polar
+5. Add charges 🡪 Kollman charges
+6. Grid 🡪 Macromolecule 🡪 Choose 🡪 6i81_cleaned 🡪 save as .pdbqt
+
+
+4. Ligand Preparation:
+1. Download 3D ligand (Vincristine) structure from ChemSpider - https://www.chemspider.com/  it will be saved as MDL MOL format.
+2. Open 3D ligand MDL MOL file in BIOVIA DS and save as (vincristine) PDB file format
+3. Open Autodock 🡪 read molecule 🡪 Vincristine
+4. L,igand 🡪 input 🡪 choose 🡪 Vincristine (Green molecule displayed)
+5. Edit 🡪 Hydrogen 🡪 Non polar
+6. Edit 🡪 Charges 🡪 Compute Gzsteiger
+7. Ligand 🡪 Torsion tree 🡪 Detect Root
+8. Ligand 🡪 Torsion tree 🡪 Set No of Torsion 🡪 13
+9. Ligand 🡪 Output 🡪 Vincristine.pdbqt
+ 
+
+
+5. Generation of’ Grid Parameter File:
+1. Select Amino Acids.
+2. Grid 🡪 Grid Box (Move grid box dimensions such that it covers all the selected amino acids in yellow) 🡪 file save closing
+3. Grid 🡪 output 🡪 6i81_vincristine.gpf
+
+
+6. Generation of docking Parameter File:
+1. Docking 🡪 Macromolecule 🡪 Set rigid filename 🡪 6i8l_cleaned.pdbqt
+2. Docking 🡪 Ligand 🡪 Choose 🡪 Vincristine
+3. Docking 🡪 Search parameters 🡪 genetic algnrithm 🡪 Accept
+4. Docking 🡪 Output 🡪 Lamarckain GA 🡪 6i8l vincristine.dpf
+
+
+7. Running AutoGrid:
+1. Run 🡪 Run Auto Grid 🡪 Program Paihname (autogrid4) 🡪 Parameter filename (6i81_vincristine.gpf) 🡪 Launch
+
+
+8. AutoDock Simulation:
+1. Run 🡪 AutoDock 🡪 Program Pathname (autodock4) 🡪 Parameter filename (6i81 vincristine.dpf) 🡪 Launch
+
+
+9. Interpreting Results:
+1. Open 6i8l_vincristine.dlg file.
+2. Binding Energy output is displayed in form of table.
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* Output :
+1. Download and install all softwares and gather the datasets
+  
+  
+  
+________________
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. Protein Cleaning:
+  
+
+
+
+  
+________________
+  
+
+3. Protein and Ligand Preparation:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4.   Grid Parameter:
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   5. Docking Parameter:
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   6. Binding Energy output:
